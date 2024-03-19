@@ -1,5 +1,7 @@
 # Unseen Object Clustering: Learning RGB-D Feature Embeddings for Unseen Object Instance Segmentation
 
+# my fork to make it work on ubuntu 16.04, python 3.5, cuda 10.0, torch 1.1.0
+
 ### Introduction
 
 In this work, we propose a new method for unseen object instance segmentation by learning RGB-D feature embeddings from synthetic data. A metric learning loss functionis utilized to learn to produce pixel-wise feature embeddings such that pixels from the same object are close to each other and pixels from different objects are separated in the embedding space. With the learned feature embeddings, a mean shift clustering algorithm can be applied to discover and segment unseen objects. We further improve the segmentation accuracy with a new two-stage clustering algorithm. Our method demonstrates that non-photorealistic synthetic RGB and depth images can be used to learn feature embeddings that transfer well to real-world images for unseen object instance segmentation. [arXiv](https://arxiv.org/pdf/2007.15157.pdf), [Talk video](https://youtu.be/pxma-x0BGpU)
