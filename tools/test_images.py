@@ -122,7 +122,7 @@ def read_sample(filename_color, filename_depth, camera_params):
     else:
         xyz_img = None
 
-    im_tensor = torch.from_numpy(im) / 255.0
+    im_tensor = torch.from_numpy(im).float() / 255.0
     pixel_mean = torch.tensor(cfg.PIXEL_MEANS / 255.0).float()
     im_tensor -= pixel_mean
     image_blob = im_tensor.permute(2, 0, 1)

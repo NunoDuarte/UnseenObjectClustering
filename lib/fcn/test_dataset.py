@@ -19,6 +19,7 @@ from utils.mean_shift import mean_shift_smart_init
 from utils.evaluation import multilabel_metrics
 import utils.mask as util_
 
+torch.set_num_threads(1)
 class AverageMeter(object):
     """Computes and stores the average and current value"""
 
@@ -190,7 +191,8 @@ def filter_labels_depth(labels, depth, threshold):
 
         for index, mask_id in enumerate(mask_ids):
             mask = (label == mask_id).float()
-            roi_depth = depth[i, 2][label == mask_id]
+            roi_depth = depth[i, 2][label == mask_id] 
+            mask = mask.cuda(0)
             depth_percentage = torch.sum(roi_depth > 0).float() / torch.sum(mask)
             if depth_percentage < threshold:
                 labels_new[i][label == mask_id] = 0
