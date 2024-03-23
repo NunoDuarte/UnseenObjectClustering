@@ -1,6 +1,6 @@
 # Unseen Object Clustering: Learning RGB-D Feature Embeddings for Unseen Object Instance Segmentation
 
-# my fork to make it work on ubuntu 16.04, python 3.5, cuda 10.0, torch 1.1.0
+# my fork is to make it work on ubuntu 16.04, python 3.5, cuda 10.0, torch 1.1.0 (2024)
 
 ### Introduction
 
